@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-
+const fortune = require('./library/fortune.js');
 const app = express();
 
 // set up the handlebars and views engine.
@@ -13,13 +13,7 @@ app.set('port', process.env.PORT);
 app.use(express.static('./public'));
 
 
-const fortunes = [
-    "Conquer your fears or they will conquer you.",
-    "Rivers need springs.",
-    "Do not fear what you don't know.",
-    "You will have a pleasant surprise.",
-    "Whenever possible, keep it simple.",
-];
+
 
 app.get('/', (req, res) => {
     // res.status(200);
@@ -40,8 +34,8 @@ app.get('/', (req, res) => {
 //     res.send('About Meadowlark Travel and its contact.');
 // })
 app.get('/about', (req, res) => {
-    const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about' , { fortune : randomFortune });
+    
+    res.render('about' , { fortune : fortune.getFortune() });
 })
 
 // custom 404 page
