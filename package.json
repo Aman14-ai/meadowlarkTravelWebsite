@@ -1,0 +1,14 @@
+{
+  "name": "meadowlark-travel-website",
+  "version": "1.0.0",
+  "description": "a project from ethan brown book",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aman kumar choudhary",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
